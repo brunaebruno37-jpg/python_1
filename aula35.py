@@ -1,0 +1,15 @@
+def decoradora (func):
+    print('decoradora 1')
+
+    def aninhada(*args,**kwargs):
+        print('aninhada')
+        res = func(*args,**kwargs)
+        return res
+    return aninhada
+
+@decoradora
+def soma(x, y):
+    return x + y
+
+dez_mais_cinco = soma( 10, 5)
+print(dez_mais_cinco)
